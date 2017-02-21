@@ -36,7 +36,7 @@ class NewsController extends Controller
     	$res = DB::table('news')->insert($data);
 		if($res){
 			// 成功
-			return redirect('/');
+			return redirect('/news');
 		}else{
 			// 失败
 			return back()->with('error','数据添加失败');
@@ -65,7 +65,7 @@ class NewsController extends Controller
 
         if($res){
             // 成功
-            return redirect('/');
+            return redirect('/news');
         }else{
             // 失败
             return back()->with('error','数据修改失败');
@@ -79,7 +79,7 @@ class NewsController extends Controller
     	$res = DB::table('news')->where('id',$id)->delete();
         if($res){
             // 成功
-            return redirect('/');
+            return redirect('/news');
         }else{
             // 失败
             return back()->with('error','数据删除失败');
